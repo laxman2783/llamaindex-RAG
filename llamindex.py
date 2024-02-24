@@ -9,6 +9,7 @@ dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
 SECRET_KEY = os.environ.get("OPENAI_API_KEY")
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 print("kry//////",SECRET_KEY )
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader,ServiceContext
 from llama_index.core.query_pipeline import QueryPipeline
